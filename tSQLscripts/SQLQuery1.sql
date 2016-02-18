@@ -1,0 +1,2 @@
+ALTER TABLE FIGHTERStemp
+ADD HEIGHT tinyint

@@ -1,0 +1,13 @@
+import urllib2
+from xml.etree import ElementTree
+
+apiURL = 'http://api.sportradar.us/mma-t1/profiles.xml?api_key=29b983edjsqagx4pfgbyg457'
+
+
+response = urllib2.urlopen(apiURL)
+MMA = response.read()
+outputMMA = open('outputMMA.xml', 'w')
+outputMMA.write(MMA)
+outputMMA.close()
+xmlMMA= ElementTree.parse('outputMMA.xml').getroot() 
+print dir(xmlMMA)

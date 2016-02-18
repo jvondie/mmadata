@@ -1,0 +1,8 @@
+import urllib2
+import elementree as ET
+
+apiURL = ('http://api.sportradar.us/mma-t1/profiles.xml?api_key=29b983edjsqagx4pfgbyg457')
+
+root = ET.parse(urllib2.urlopen(apiURL)).getroot()
+
+// this seems to run fine, but then I don't know what to do

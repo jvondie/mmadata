@@ -1,0 +1,789 @@
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+  <head>
+    <base href="http://mmadecisions.com:80/">
+    
+	<title>UFC on Fox 17: dos Anjos vs. Cerrone 2 :: MMA Decisions</title> 
+    
+  		<meta http-equiv="keywords" content="mma decisions, ufc judges, ufc scoring, ufc scorecard, mma scores">
+	<meta http-equiv="description" content="MMA Decisions provides a summary of MMA judging decisions, focusing on UFC results">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+	<meta property="og:title" content="MMADecisions.com" />
+	<meta property="og:type" content="sport" />
+	<meta property="og:url" content="http://mmadecisions.com/" />
+	<meta property="og:image" content="http://mmadecisions.com/img/mmadlogosquaresmall.png" />
+	<meta property="og:site_name" content="MMADecisions.com" />
+	<meta property="fb:admins" content="517077224" />
+	 
+	<link rel="icon" type="image/gif" href="/img/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="mmadecisions2.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css" /> -->
+	<link rel="stylesheet" type="text/css" href="css/mmad-custom1/jquery-ui.min.css" />
+
+    <script type="text/javascript"
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+  
+	<!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css"> -->
+
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+
+	<script type="text/javascript">
+	
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-18154317-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	
+	</script>
+	
+	<style>
+	.ui-autocomplete-category {
+		font-weight: bold;
+		padding: .2em .4em;
+		margin: .2em 0 .2em;
+		line-height: 1.5;
+		text-align: left;
+		border-top: 1px dotted #036;
+		border-bottom: 1px dotted #036;
+		background-color: #eeeeee;
+	}
+	.ui-autocomplete {
+	    max-height: 450px;
+	    overflow-y: auto;
+	    /* prevent horizontal scrollbar */
+	    overflow-x: hidden;
+	}
+	
+	</style>
+	
+	<script>
+
+	  $.widget( "custom.catcomplete", $.ui.autocomplete, {
+	    _create: function() {
+	      this._super();
+	      this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+	    },
+	    _renderMenu: function( ul, items ) {
+	      var that = this,
+	        currentCategory = "";
+	      $.each( items, function( index, item ) {
+	        var li;
+	        if ( item.category != currentCategory ) {
+	          ul.append( "<li class='ui-autocomplete-category'>" + item.category + "</li>" );
+	          currentCategory = item.category;
+	        }
+	        li = that._renderItemData( ul, item );
+	        if ( item.category ) {
+	          li.attr( "aria-label", item.category + " : " + item.label );
+	        }
+	      });
+	    }
+	  });
+	  </script>
+	  
+	  <script>
+	  
+		$(function() {
+		    $("#s").catcomplete({
+		        source: function(request, response) {
+		            $.ajax({
+		                url: "getdata.jsp",
+		                type: "GET",
+		                data: { term: request.term },
+		                dataType: "json",
+		
+		                success: function(data) {
+		                    response(data);
+		                }
+		           });          
+		        },
+		        select: function( event, ui ) { 
+		            window.location.href = ui.item.url;
+		        },
+		        minLength: 3,
+		        delay: 400
+		    });
+		});
+	    
+	  </script>
+
+
+  </head>
+  
+  <body>
+
+    	<header>
+		<div class="positionwrapper">
+			<p id="bottomalign">
+				<a id="HomeLink" class="logo" href=""><img src="img/mmadlogo.png" alt="MMADecisions.com" border="0" /></a>
+			</p>
+			<div class="click-nav">
+				<ul class="no-js">
+					<li class="clicker" style="width:130px"><a>DECISIONS <span style="font-size: 6pt">&#x25BC;</span></a>
+					    <ul>
+					      <li><a href='decisions-by-event/'><span>by EVENT</span></a></li>
+					      <li><a href='decisions-by-judge/'><span>by JUDGE</span></a></li>
+					      <li><a href='decisions-by-fighter/'><span>by FIGHTER</span></a></li>
+					    </ul>
+					</li>
+					<li class="clicker" style="width:130px"><a>JUDGES <span style="font-size: 6pt">&#x25BC;</span></a>
+					    <ul>
+					      <li><a href='decisions-by-judge/'><span>all JUDGES</span></a></li>
+					      <li><a href='most-decisions-judges/'><span>most DECISIONS</span></a></li>
+					      <li><a href='minority-report/'><span>MINORITY report</span></a></li>
+					      <li><a href='ten-ten-report/'><span>10-10 report</span></a></li>
+					    </ul>
+					</li>
+					<li class="clicker" style="width:130px"><a>FIGHTERS <span style="font-size: 6pt">&#x25BC;</span></a>
+					    <ul>
+					      <li><a href="decisions-by-fighter/">all FIGHTERS</a></li>
+					      <li><a href="most-decisions-fighters/">most DECISIONS</a></li>
+					    </ul>
+					</li>
+					<li class="nonclicker" style="width:90px"><a href="decisions-by-event/">EVENTS</a></li>
+					<li class="nonclicker" style="width:90px"><a href="blog/">BLOG</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	
+	<!-- jQuery -->
+	<script>
+	$(function() {
+		// degrade gracefully
+		$('.click-nav > ul').toggleClass('no-js js');
+		// hide dropdown menus
+		$('.click-nav .js ul').hide();
+		// reveal filter dropdown menu on click rather than hover
+		$('.click-nav .js li.clicker').click(function(e) {
+			// slideUp any open dropdown menus
+			if ($('.click-nav .js ul').not($(this).find('ul')).is(':visible')) {
+					$('.click-nav .js ul').not($(this).find('ul')).stop(true, true).slideUp();
+					$('.click-nav .js li.clicker').removeClass('active');
+				};
+				
+				// slide current dropdown menu up or down
+				$(this).find('ul').stop(true, true).slideToggle(200);
+				$(this).toggleClass('active');
+				// instead of return false; or preventDefault(), use stopPropagation which keeps all links clickable in the dropdown menu
+				e.stopPropagation();
+		});
+		
+		// click anywhere on the page to slide up any visible dropdown menus
+		$(document).click(function() {
+			if ($('.click-nav .js ul').is(':visible')) {
+				$('.click-nav .js ul', this).stop(true, true).slideUp();
+				$('.clicker').removeClass('active');
+			}
+		});
+	});
+	</script>
+    	
+   	<div id="container_outer">
+   	
+   		<script type="text/javascript">
+	function validateForm()
+	{
+		  if(document.search.s.value.length < 2)
+		  { 
+		    return false;
+		  }
+		  return true;
+	}
+	</script>
+
+	<table id="main" border="0">
+	
+		<tr style="border-bottom: 1px solid #999;">
+		
+			<td width="735px" align="center">
+				
+				<script type="text/javascript"><!--
+				google_ad_client = "pub-6570223566815186";
+				/* 728x90, created 8/3/10 */
+				google_ad_slot = "1718129579";
+				google_ad_width = 728;
+				google_ad_height = 90;
+				//-->
+				</script>
+				<script type="text/javascript"
+				src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+				</script>
+			
+			</td>
+				
+			<td width="230px" align="left" valign="bottom">
+
+				<span style="font-size:2.4em;font-family:'Open Sans', sans-serif;color: #2f4e7a;">f o l l o w</span>&nbsp;&nbsp;&nbsp;
+				<a href="http://twitter.com/MMADecisions/"><img src="img/twit.png" border="0" height="25px"></a>&nbsp;&nbsp;&nbsp;
+				<a href="http://facebook.com/MMADecisions/"><img src="img/fb.png" border="0" height="25px"></a>&nbsp;&nbsp;&nbsp;
+				<a href="http://feeds.feedburner.com/MMADecisions/Events"><img src="img/rss.png" border="0" height="25px"></a>
+				<br><hr>
+				
+				<div class=frame>
+					<!-- <span style="font-size:1.6em;font-family:'Open Sans', sans-serif;color: #2f4e7a;vertical-align: middle;">s e a r c h&nbsp;&nbsp;&nbsp;j u d g e s</span><br> -->
+					<form name="search" id="search" method="get" action="search.jsp" onsubmit="return validateForm();">
+				    	<input type="search" id="s" name="s" size="26" placeholder="search fighters, judges, events" style="background-color: #ffcf43;color: #003366;font-size: 11px;vertical-align: middle;"/><button type="submit" style="border: 0; padding: 0; background: transparent; vertical-align: middle;"><img src="img/search.jpg"></img></button>
+				    	<br>
+				    </form>
+				    <!--
+				    <script>
+				       $( "#s" ).autocomplete({
+				            source: 'getdata.jsp',
+				            minLength: 2,
+				            select: function (event, ui) {
+				                window.location = ui.item.url;
+				            }
+				        });
+				    </script>
+				    -->
+			    </div>
+			    
+			</td>
+		
+		</tr>
+		
+	</table>
+
+	<table border="0" width="965px" cellspacing="5" cellpadding="5" align="center">
+	
+		<tr>
+			<td align="center" valign="top" width="67%">
+			
+				<br>
+			
+				<table border="0" cellspacing="0" width="100%">
+					<tr class="top-row">
+						<td colspan="2" class="decision-top2" align="center" style="background: #e8e8e8 url('img/ufc_small.png') 15px 10px no-repeat;">
+							<b>UFC on Fox 17: dos Anjos vs. Cerrone 2</b><br>
+							Amway Center<br>
+							Orlando, Florida, USA
+						</td>
+					</tr>
+					<tr class="bottom-row">
+						<td colspan="2" class="decision-bottom2" align="center">December 19, 2015
+						</td>
+					</tr>
+				</table>
+				
+				<br>
+				
+				
+				
+					<table border=0 cellspacing="2" width="100%">
+						<tr class="top-row">
+							<td class="top-cell" align="center"><b>Fight</b></td>
+							<td class="top-cell" align="center" colspan="3"><b>Scores</b></td>
+						</tr>
+					
+						
+						
+							
+							
+							
+							
+							
+							
+							
+							
+						
+							
+						
+							<tr bgcolor="#ffffff">
+								<td class="list2" align="center">
+									<b><a href="decision/6713/Nate-Diaz-vs-Michael-Johnson;jsessionid=BE5E4313D29100511704D16D244B41CF
+">Diaz&nbsp;def.&nbsp;Johnson</a></b><br>
+									<span style="font-size: 13px">
+										<i>Unanimous</i>
+									</span>
+								</td>
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/318/Derek-Cleary;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										CLEARY
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/53/Chris-Lee;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										LEE
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/65/Roy-Silbert;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										SILBERT
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								
+
+							</tr>
+				
+						
+						
+							
+							
+							
+							
+							
+							
+							
+							
+						
+							
+						
+							<tr bgcolor="#dddddd">
+								<td class="list2" align="center">
+									<b><a href="decision/6712/Karolina-Kowalkiewicz-vs-Randa-Markos;jsessionid=BE5E4313D29100511704D16D244B41CF
+">Kowalkiewicz&nbsp;def.&nbsp;Markos</a></b><br>
+									<span style="font-size: 13px">
+										<i>Unanimous</i>
+									</span>
+								</td>
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/331/Don-Balas;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										BALAS
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										30 - 
+										27
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/318/Derek-Cleary;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										CLEARY
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/65/Roy-Silbert;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										SILBERT
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								
+
+							</tr>
+				
+						
+						
+							
+							
+							
+							
+							
+							
+							
+							
+						
+							
+						
+							<tr bgcolor="#ffffff">
+								<td class="list2" align="center">
+									<b><a href="decision/6705/Valentina-Shevchenko-vs-Sarah-Kaufman;jsessionid=BE5E4313D29100511704D16D244B41CF
+">Shevchenko&nbsp;def.&nbsp;Kaufman</a></b><br>
+									<span style="font-size: 13px">
+										<i>Split</i>
+									</span>
+								</td>
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/331/Don-Balas;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										BALAS
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/75/Hector-Gomez;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										GOMEZ
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+									
+										
+									
+								
+
+								<td class="selected" align="center">
+								
+									
+										<b><a href="judge/261/Barry-Luxenberg;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										LUXENBERG
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										28 - 
+										29
+									</span> 
+								</td> 
+								
+								
+
+							</tr>
+				
+						
+						
+							
+							
+							
+							
+							
+							
+							
+							
+						
+							
+						
+							<tr bgcolor="#dddddd">
+								<td class="list2" align="center">
+									<b><a href="decision/6700/Nik-Lentz-vs-Danny-Castillo;jsessionid=BE5E4313D29100511704D16D244B41CF
+">Lentz&nbsp;def.&nbsp;Castillo</a></b><br>
+									<span style="font-size: 13px">
+										<i>Split</i>
+									</span>
+								</td>
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/318/Derek-Cleary;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										CLEARY
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/53/Chris-Lee;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										LEE
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										30 - 
+										27
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+									
+										
+									
+								
+
+								<td class="selected" align="center">
+								
+									
+										<b><a href="judge/261/Barry-Luxenberg;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										LUXENBERG
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										28 - 
+										29
+									</span> 
+								</td> 
+								
+								
+
+							</tr>
+				
+						
+						
+							
+							
+							
+							
+							
+							
+							
+							
+						
+							
+						
+							<tr bgcolor="#ffffff">
+								<td class="list2" align="center">
+									<b><a href="decision/6696/Kamaru-Usman-vs-Leon-Edwards;jsessionid=BE5E4313D29100511704D16D244B41CF
+">Usman&nbsp;def.&nbsp;Edwards</a></b><br>
+									<span style="font-size: 13px">
+										<i>Unanimous</i>
+									</span>
+								</td>
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/331/Don-Balas;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										BALAS
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/94/Sal-D'Amato;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										D&#039;AMATO
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										29 - 
+										28
+									</span> 
+								</td> 
+								
+								 
+
+								
+								
+
+								<td class="list" align="center">
+								
+									
+										<b><a href="judge/261/Barry-Luxenberg;jsessionid=BE5E4313D29100511704D16D244B41CF ">
+										LUXENBERG
+										</a></b><br>
+									
+									
+									
+									<span style="font-size: 13px">
+										30 - 
+										27
+									</span> 
+								</td> 
+								
+								
+
+							</tr>
+				
+						
+						
+						<tr class="bottom-row">
+							<td colspan="4" align="right" class="bottom-cell">&nbsp;</td>
+						</tr>
+					
+					</table>
+					
+				
+				
+				
+				
+				<br>
+				
+				
+				
+				
+
+			</td>
+			
+			<td align="center" valign="top">
+			
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- LargeRect -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:336px;height:280px"
+				     data-ad-client="ca-pub-6570223566815186"
+				     data-ad-slot="7712003611"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+
+			</td>
+			
+		</tr>
+
+	</table>
+	
+	</div>
+	
+	<br/>	
+	
+		<div class="footer">
+	    	<a href="">Home</a> | 
+	    	<a href="definitions/">Definitions</a> | 
+	    	<a href="blog/">Blog</a> | 
+	    	<a href="http://twitter.com/MMADecisions/" target="_blank">Twitter</a> | 
+	    	<a href="http://feeds.feedburner.com/MMADecisions/Events">RSS</a> | 
+	    	<a href="contact/"> Contact Us</a>
+	    	<br><br>
+	</div>
+	<span style="color: white">&copy; 2015 MMADecisions.com</span>
+			
+  </body>
+  
+</html>
